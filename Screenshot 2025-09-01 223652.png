@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narasimha Portfolio</title  >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'poppins','sans-serif';
+        box-sizing: border-box;
+    }
+    body{
+        background: #0B1220;
+        color: #fff;
+        padding-top: 70px; /* or the height of your nav bar */
+    }
+
+
+
+
+    /* HEADER SECTION */
+    #header {
+        width: 100%;
+        height: 100vh;
+        background-color: #0b0f19;
+        background-image:
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+        padding: 10px 10%;
+    }
+
+    /* NAVBAR (MechVision style) */
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 10%;
+        z-index: 1000;
+
+        background-color:none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* LOGO */
+    .logo {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+
+    .logo span {
+        color: #7ab7ff;  /* Blue .io style */
+    }
+
+    /* NAV MENU */
+    nav ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+    }
+
+    nav ul li {
+        list-style: none;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+    }
+
+    /* underline hover effect */
+    nav ul li a::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        background: #7ab7ff;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.4s;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    /* HEADER TEXT */
+    .header-text {
+        margin-top: 150px; /* better for fixed navbar */
+        color: white;
+        font-size: 30px;
+    }
+
+    .header-text h1 {
+        font-size: 60px;
+        margin-top: 20px;
+    }
+
+    .header-text h1 span {
+        color: #7ab7ff;
+    }
+
+    .header-text h3 {
+        font-size: 25px;
+        margin-top: 10px;
+    }
+
+    /* BUTTON */
+    .btn {
+        display: inline-block;
+        background: #ff3c3c;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        margin-top: 1rem;
+        border-radius: 5px;
+    }
+
+
+
+
+
+
+
+
+
+
+    /* ---------About--------- */
+    #about{
+    padding: 80px 0;
+    color: rgba(248, 248, 248, 0.737);
+    animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Row Animation */
+    .row{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        animation: slideUp 1.2s ease-in-out;
+    }
+
+    /* Left Column (Image) */
+    .about-col-1{
+        flex-basis: 35%;
+        animation: slideLeft 1.3s ease;
+    }
+
+    .about-col-1 img{
+        width: 100%;
+        border-radius: 15px;
+        transform: scale(0.9);
+        transition: 0.5s ease;
+    }
+
+    .about-col-1 img:hover{
+        transform: scale(1);
+    }
+
+    /* Right Column (Content) */
+    .about-col-2{
+        flex-basis: 60%;
+        animation: slideRight 1.3s ease;
+    }
+
+    .about-col-2 p{
+        font-size: 20px;
+        font-style: normal;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Title Animation */
+    .sub-title{
+        font-size: 80px;
+        font-weight: 600;
+        color: #fff;
+        animation: popIn 1s ease;
+    }
+
+    /* Button Animation */
+    .btn {
+        display: inline-block;
+        background: #ff3c3c;
+        color: white;
+        font-size: 25px;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        margin-top: 1rem;
+        border-radius: 10px;
+        transition: 0.4s ease;
+        animation: fadeInUp 1.3s ease;
+    }
+
+    .btn:hover{
+        background: #ff5f5f;
+        transform: translateY(-5px);
+    }
+
+    /* ------------------------
+        ANIMATIONS
+    -------------------------*/
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+        from {opacity:0; transform: translateY(40px);}
+        to {opacity:1; transform: translateY(0);}
+    }
+
+    @keyframes slideLeft {
+        from {opacity:0; transform: translateX(-50px);}
+        to {opacity:1; transform: translateX(0);}
+    }
+
+    @keyframes slideRight {
+        from {opacity:0; transform: translateX(50px);}
+        to {opacity:1; transform: translateX(0);}
+    }
+
+    @keyframes popIn {
+        0% {transform: scale(0.6); opacity: 0;}
+        100% {transform: scale(1); opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+        from {opacity:0; transform: translateY(20px);}
+        to {opacity:1; transform: translateY(0);}
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /* ----------Education-------- */
+
+    /* Main Section */
+    #Qualification{
+        padding: 80px 0;
+        color: #ababab;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Title */
+    .title {
+        text-align: center;
+        font-size: 55px;
+        margin-bottom: 60px;
+        color: white;
+        animation: popIn 1.2s ease;
+    }
+
+    .title span {
+        display: block;
+        font-size: 14px;
+        color: rgb(195, 7, 7);
+        margin-top: 5px;
+        letter-spacing: 2px;
+        animation: fadeInUp 1.4s ease;
+    }
+
+    /* Timeline Container */
+    .timeline-container {
+        position: relative;
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px 0;
+        animation: slideUp 1.2s ease;
+    }
+
+    /* Timeline Line */
+    .timeline-container::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background: #57576e;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: growLine 2s ease;
+    }
+
+    /* Timeline Items */
+    .timeline-item {
+        padding: 20px 40px;
+        position: relative;
+        width: 50%;
+        opacity: 0;
+        animation: fadeItem 2.5s forwards ease;
+    }
+
+    .timeline-item:nth-child(odd) {
+        animation-delay: 0.4s;
+    }
+    .timeline-item:nth-child(even) {
+        animation-delay: 0.7s;
+    }
+
+    /* Timeline Dots */
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 1;
+        animation: pulse 2s infinite ease;
+    }
+
+    /* Left Items */
+    .timeline-item.left {
+        left: 0;
+        text-align: right;
+        animation-name: slideLeftItem;
+    }
+
+    .timeline-item.left::before {
+        right: -8px;
+    }
+
+    /* Right Items */
+    .timeline-item.right {
+        left: 50%;
+        text-align: left;
+        animation-name: slideRightItem;
+    }
+
+    .timeline-item.right::before {
+        left: -8px;
+    }
+
+    /* Content Box */
+    .timeline-item .content {
+        background: #6e6d84;
+        padding: 20px;
+        color: white;
+        border-radius: 8px;
+        transition: 0.4s ease;
+    }
+
+    .timeline-item .content:hover {
+        transform: translateY(-5px);
+        background: #528293;
+    }
+
+    /* Content Text */
+    .timeline-item .year {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .timeline-item .content h2 {
+        color: #fff;
+        margin-bottom: 5px;
+    }
+
+    .timeline-item .content .location {
+        color: rgb(166, 232, 196);
+        font-size: 16.5px;
+        margin-bottom: 10px;
+    }
+
+    .timeline-item .content p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #adabab;
+    }
+
+    /* -----------------------
+        ANIMATIONS
+    ----------------------- */
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes popIn {
+        0% {transform: scale(0.6); opacity: 0;}
+        100% {transform: scale(1); opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+        from {opacity: 0; transform: translateY(30px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideUp {
+        from {opacity: 0; transform: translateY(60px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideLeftItem {
+        from {opacity: 0; transform: translateX(-80px);}
+        to {opacity: 1; transform: translateX(0);}
+    }
+
+    @keyframes slideRightItem {
+        from {opacity: 0; transform: translateX(80px);}
+        to {opacity: 1; transform: translateX(0);}
+    }
+
+    @keyframes growLine {
+        from {height: 0;}
+        to {height: 100%;}
+    }
+
+    @keyframes pulse {
+        0% {transform: scale(1);}
+        50% {transform: scale(1.3); background: red;}
+        100% {transform: scale(1);}
+    }
+
+    @keyframes fadeItem {
+        to {opacity: 1;}
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /* PROJECT SECTION */
+  .main-title{
+    font-size:45px;
+    margin:20px;
+    color:#16d19a;
+    font-weight:bold;
+}
+
+/* MAIN SLIDER */
+.slider-container{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.slides{
+    display:flex;
+    transition:0.5s;
+}
+
+.slide{
+    min-width:100%;
+}
+
+/* CARD */
+.project-card{
+    background:#444b72;
+    padding:20px;
+    border-radius:12px;
+    max-width:800px;
+    margin:auto;
+}
+
+.project-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* BUTTON */
+.open-gallery-btn{
+    margin-top:10px;
+    padding:10px 20px;
+    background:#0a66c2;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+/* ARROWS */
+.slide-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#4d669b;
+    color:white;
+    border:none;
+    padding:10px;
+    cursor:pointer;
+}
+
+.slide-btn.prev{left:10px;}
+.slide-btn.next{right:10px;}
+
+/* POPUP */
+.popupGallery{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:#0B1220;
+    z-index:9999;
+    overflow:auto;
+    padding:40px;
+}
+
+/* CLOSE */
+.popupGallery span{
+    position:fixed;
+    top:20px;
+    right:30px;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* POPUP SLIDER */
+.slider{
+    max-width:900px;
+    margin:60px auto;
+    position:relative;
+    background:black;
+}
+
+.slider img{
+    width:100%;
+    height:400px;
+    object-fit:contain;
+    display:none;
+}
+
+.slider img.active{
+    display:block;
+}
+
+.slider .prev,
+.slider .next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:black;
+    color:white;
+    border:none;
+    padding:10px;
+    cursor:pointer;
+}
+
+.slider .prev{left:10px;}
+.slider .next{right:10px;}
+
+/* CONTENT */
+.popup-content{
+    max-width:800px;
+    margin:auto;
+    text-align:left;
+}
+
+.popup-content h2{
+    color:#16d19a;
+}
+
+
+
+    /* -------skils------ */
+    .skills-section {
+    padding: 70px 0;
+    
+    background: #0B1220;
+    }
+
+    .skills-title {
+        color: white;
+        font-size: 45px;
+        margin-bottom: 40px;
+        text-align: center;
+        padding-left: 40px;
+        position: relative;
+    }
+
+    /* .skills-title span {
+        display: block;
+        width: 120px;
+        height: 3px;
+        background: linear-gradient(to right, #ff4500, transparent);
+        margin-top: 5px;
+    } */
+
+    .skills-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .skill-card {
+        background: rgb(80, 113, 121);
+        padding: 25px 35px;
+        border-radius: 14px;
+        width: 170px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(230, 205, 205, 0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-18px);
+        box-shadow: 0 0 20px rgba(16, 106, 42, 0.3);
+    }
+
+    .skill-card img {
+        width: 50px;
+        margin-bottom: 12px;
+    }
+
+    .skill-card p {
+        color: #cdd3df;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+
+
+
+
+
+
+    
+    /* ______contact____ */
+
+    #contact {
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    }
+
+    .section-title {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    .section-subtext {
+        font-size: 18px;
+        color: #bbbbbb;
+        margin-bottom: 50px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+    }
+
+    .contact-container {
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    /* Form Box */
+    .contact-form {
+        flex-basis: 55%;
+        background: #515f7e;
+        padding: 30px;
+        
+        border-radius: 12px;
+        box-shadow: 0px 0px 20px rgba(99, 30, 30, 0.5);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 18px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background: #353d47;
+        color: rgb(254, 244, 244);
+        font-size: 16px;
+    }
+
+    .contact-form textarea {
+        height: 150px;
+        resize: none;
+    }
+
+    .send-btn {
+        width: 100%;
+        padding: 14px;
+        background: #16d19a;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .send-btn:hover {
+        background: #12bd88;
+    }
+
+    /* Right Side Contact Info */
+    .contact-info {
+        flex-basis: 35%;
+        text-align: left;
+    }
+
+    .contact-info h3 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #16d19a;
+    }
+
+    .contact-info p {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .contact-info i {
+        margin-right: 10px;
+        color: #16d19a;
+    }
+
+    /* Social Icons */
+    .social-icons a {
+        color: white;
+        font-size: 28px;
+        margin-right: 18px;
+        transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: #e4f0ec;
+    }
+/* 
+    /* --------Certification--------- */
+
+
+</style>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Narasimha<span> GOSU</span></div>
+                <ul class="nav-links">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#qualification">Qualification</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-text">
+                <p>Hello, I'm</p>
+                <h1>Laxminarasimha Gosu</h1>
+                <h3>Graduate in Mechanical Engineering</h3>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- ------------about----------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>I am a motivated Mechanical Engineering graduate specializing in mechanical design and CAD tools like AutoCAD, SolidWorks, CATIA, and Fusion 360. With hands-on experience in designing and fabricating mechanical projects, I am passionate about creating efficient and innovative engineering solutions. In addition to my core engineering skills, I have developed software proficiency in Python and full-stack development, enabling me to bring a modern, tech-savvy approach to engineering challenges. I am eager to contribute my mechanical design expertise to a dynamic engineering team and grow my career as a Mechanical Design Engineer.</p>
+                    
+                    <a href="narasimha resume (2) - Copy.pdf" class="btn" target="_blank">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- -------skils------ -->
+
+    <section id="skills" class="skills-section">
+        <h2 class="skills-title">Skills & Toolset <span></span></h2>
+
+        <div class="skills-container">
+            <div class="skill-card">
+                <img src="autocad.svg" alt="">
+                <p>AutoCAD</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="hackthebox.svg" alt="">
+                <p>SolidWorks</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="fortran.svg" alt="">
+                <p>Fusion 360</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="dassaultsystemes.svg" alt="">
+                <p>Catia </p>
+            </div>
+            <div class="skill-card">
+                <img src="python.svg" alt="">
+                <p>Python (Scripting)</p>
+            </div>
+            
+
+            
+
+            <div class="skill-card">
+                <img src="hackthebox.svg" alt="">
+                <p>PTC Creo</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ----------- Education---------- -->
+    <div id="Qualification"></div>
+        <section class="timeline">
+            <h2 class="title">Qualification<span>My Educational Journey</span></h2>
+            <div class="timeline-container">
+
+                <!-- B.Tech -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h2>B.Tech in Mechanical Engineering</h2>
+                        <p class="location">Anurag University, Hyderabad</p>
+                        <p>Pursued Bachelor of Technology in Mechanical Engineering from <br>2020 to 2024 with a score of 6.45 GPA.</p>
+                    </div>
+                    <div class="year">2020-2024</div>
+                </div>
+                
+
+                <!-- Intermediate -->
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h2>Intermediate / MPC</h2>
+                        <p class="location">Sri Chaitanya Junior College, Khammam</p>
+                        <p>Completed MPC stream in Intermediate Education during <br>2018 - 2020 with a score of 847/1000.</p>
+                    </div>
+                    <div class="year">2018-2020</div>
+                </div>
+
+                <!-- SSC -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h2>SSC</h2>
+                        <p class="location">Z.P. High School, Garikapadu</p>
+                        <p>Completed Secondary School Certificate in 2018 with a score of <br> 6.7 GPA.</p>
+                    </div>
+                    <div class="year">2018</div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- PROJECTS -->
+    <h1 class="main-title">Mechanical Projects</h1>
+
+    <div class="slider-container">
+
+    <button class="slide-btn prev">◀</button>
+
+    <div class="slides">
+
+    <!-- SLIDE 1 -->
+    <div class="slide">
+    <div class="project-card">
+    <img src="Screenshot 2025-11-21 234720.png">
+    <h3>Footstep Power Generator Using Piezoelectric Technology.</h3>
+    <p>This project is designed to generate electrical energy from human footsteps using piezoelectric sensors. It converts mechanical pressure from walking into usable electrical energy, promoting a sustainable and eco-friendly power solution.</p>
+    <button onclick="openPopup(1)" class="open-gallery-btn">View Project</button>
+    </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide">
+    <div class="project-card">
+    <img src="Halfbike II_ A Standing Bike by Kolelinia - Gessato (1).jpg">
+    <h3>Three-Wheel Half Bike – Design and Fabrication</h3>
+    <p>This project involves the design and fabrication of a three-wheel half bike, combining stability, efficiency, and innovative vehicle structure. The aim is to create a compact and balanced vehicle suitable for safe and smooth transportation.</p>
+    <button onclick="openPopup(2)" class="open-gallery-btn">View Project</button>
+    </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide">
+    <div class="project-card">
+    <img src="Screenshot 2025-12-29 000352.png">
+    <h3>Multi-Cylinder Engine Assembly Design Using SolidWorks(Pratice design project - 1).</h3>
+    <p>Designed a complete 4-cylinder engine mechanism including crankshaft, pistons, and connecting rods using SolidWorks, focusing on assembly motion and mechanical synchronization.</p>
+    <button onclick="openPopup(3)" class="open-gallery-btn">View Project</button>
+    </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide">
+    <div class="project-card">
+    <img src="Screenshot 2025-12-24 235734.png">
+    <h3>Electric Bike Frame Design with Suspension System – SolidWorks(pratice design-2).</h3>
+    <p>Designed a complete two-wheeler frame with suspension system, focusing on structural design, component integration, and mechanical stability using SolidWorks.</p>
+    <button onclick="openPopup(4)" class="open-gallery-btn">View Project</button>
+    </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="slide">
+    <div class="project-card">
+    <img src="Screenshot 2025-12-21 232832.png">
+    <h3>Quadcopter Drone Frame Design with Propeller Assembly – Fusion 360(preatice design - 3)</h3>
+    <p>Gearbox housing and mechanical parts design.</p>
+    <button onclick="openPopup(5)" class="open-gallery-btn">View Project</button>
+    </div>
+    </div>
+
+    <!-- SLIDE 6 -->
+    <div class="slide">
+    <div class="project-card">
+    <img src="Screenshot 2025-12-07 160333.png">
+    <h3>Single Cylinder Engine Components & Assembly Modeling(Pratice design - 4)</h3>
+    <p>Designed and assembled a single-cylinder engine including piston, crankshaft, and cylinder using SolidWorks.</p>
+    <button onclick="openPopup(6)" class="open-gallery-btn">View Project</button>
+    </div>
+    </div>
+
+    <!-- SLIDE 7 -->
+    <div class="slide">
+    <div class="project-card">
+    <img src="Screenshot 2026-03-21 153421.png">
+    <h3>Mechanical Component Design(Pratice design - 5)</h3>
+    <p>Gearbox housing and mechanical parts design.</p>
+    <button onclick="openPopup(7)" class="open-gallery-btn">View Project</button>
+    </div>
+    </div>
+
+
+    <!-- SLIDE 8 -->
+    <div class="slide">
+    <div class="project-card">
+    <img src="Screenshot 2026-03-21 153706.png">
+    <h3>Mechanical Component Design(Pratice design - 6)</h3>
+    <p>Gearbox housing and mechanical parts design.</p>
+    <button onclick="openPopup(8)" class="open-gallery-btn">View Project</button>
+    </div>
+    </div>
+
+    <!-- SLIDE 9 -->
+    <div class="slide">
+    <div class="project-card">
+    <img src="Screenshot 2026-03-21 153926.png">
+    <h3>Mechanical Component Design(Pratice design - 7)</h3>
+    <p>Gearbox housing and mechanical parts design.</p>
+    <button onclick="openPopup(9)" class="open-gallery-btn">View Project</button>
+    </div>
+    </div>
+
+    <!-- SLIDE 10 -->
+    <div class="slide">
+    <div class="project-card">
+    <img src="download (34).jpg">
+    <h3>More Design projects (Pratice design - 8)</h3>
+    <p>You can click view project button we can see more design project images</p>
+    <button onclick="openPopup(10)" class="open-gallery-btn">View Project</button>
+    </div>
+    </div>
+
+    </div>
+
+    <button class="slide-btn next">▶</button>
+
+    </div>
+
+    <!-- POPUP 1 -->
+    <div id="popup1" class="popupGallery">
+    <span onclick="closePopup(1)">❌</span>
+
+    <div class="slider" id="slider1">
+    <button class="prev">◀</button>
+
+    <img class="active" src="Screenshot 2025-11-21 234720.png">
+    <img src="Screenshot 2025-11-21 233901.png">
+    <img src="Screenshot 2025-11-21 233938.png">
+
+    <button class="next">▶</button>
+    </div>
+
+    <div class="popup-content">
+        <h2>Footstep Power Generator Using Piezoelectric Technology.</h2><br>
+        <p><h3>Overview</h3></p>
+        <p>This project is designed to generate electrical energy from human footsteps using piezoelectric sensors. It converts mechanical pressure from walking into usable electrical energy, promoting a sustainable and eco-friendly power solution.</p>
+        <br>
+        <p><h3>Project Description</h3></p>
+        <p>The system works on the principle of the piezoelectric effect, where mechanical stress applied to sensors produces electrical energy. When a person steps on the platform, pressure is applied to the sensors, generating voltage.
+
+
+        This generated energy is then converted into usable form and stored for powering small electrical devices such as LED lights. The project demonstrates an innovative way of utilizing wasted human energy efficiently.</p>
+    
+        <br>
+        <ul>
+        <li>Software: SolidWorks</li>
+        <li>Technology: Piezoelectric</li>
+        <li>Type: Prototype</li>
+        <li>Role: Design + Fabrication</li>
+        </ul>
+        <br>
+        <p><h3>Key Features</h3></p>
+        <ul>
+        <li>Converts foot pressure into electrical energy</li>
+        <li>Eco-friendly and renewable energy source</li>
+        <li>Simple and cost-effective system</li>
+        <li>Suitable for continuous energy generation</li>
+        </ul>
+        <br>
+        <p><h3>Advantages</h3></p>
+        <ul>
+        <li>Reduces dependency on conventional energy sources</li>
+        <li>Utilizes wasted human energy</li>
+        <li>Low maintenance</li>
+        <li>Supports smart city development </li>
+        </ul>
+        <br>
+        <p><h3>Applications</h3></p>
+        <ul>
+        <li>Railway stations</li>
+        <li>Shopping malls</li>
+        <li>Footpaths and walkways</li>
+        <li>Public places with high foot traffic</li>
+        </ul>
+
+
+    </div>
+    </div>
+
+
+    <!-- POPUP 2 -->
+    <div id="popup2" class="popupGallery">
+    <span onclick="closePopup(2)">❌</span>
+
+    <div class="slider" id="slider2">
+    <button class="prev">◀</button>
+
+    <img class="active" src="Halfbike II_ A Standing Bike by Kolelinia - Gessato (1).jpg">
+    <img src="Screenshot 2026-03-21 124125.png">
+    <img src="Screenshot 2026-03-21 124643.png">
+    <img src="Screenshot 2026-03-21 124621.png">
+    <img src="Screenshot 2026-03-21 124538.png">
+    <img src="Screenshot 2026-03-21 124214.png">
+
+    <button class="next">▶</button>
+    </div>
+
+    <div class="popup-content">
+    <h2>Three-Wheel Half Bike – Design and Fabrication</h2><br>
+        <p><h3>Overview</h3></p>
+        <p>This project involves the design and fabrication of a three-wheel half bike, combining stability, efficiency, and innovative vehicle structure. The aim is to create a compact and balanced vehicle suitable for safe and smooth transportation.</p>
+        <br>
+        <p><h3>Project Description</h3></p>
+        <p>The three-wheel half bike is designed by integrating a two-wheeler front section with a single rear wheel or modified chassis structure to improve balance and control. The design focuses on reducing instability commonly found in conventional two-wheelers. <br>
+
+The fabrication process includes chassis modification, frame design, wheel alignment, and proper mounting of components. Special attention is given to weight distribution and structural strength to ensure durability and safety.</p>
+    
+    <br>
+        <ul>
+        <li>Software: FUSION 360</li>
+        <li>Technology: Vehicle Design, Fabrication, Mechanical Systems</li>
+        <li>Type: Prototype</li>
+        <li>Role: Design + Fabrication</li>
+        </ul>
+        <br>
+        <p><h3>Key Features</h3></p>
+        <ul>
+        <li>Three-wheel configuration for improved stability</li>
+        <li>Enhanced balance compared to two-wheelers</li>
+        <li>Compact and lightweight design</li>
+        <li>Suitable for low-speed transportation</li>
+        </ul>
+        <br>
+        <p><h3>Advantages</h3></p>
+        <ul>
+        <li>Increased safety and stability</li>
+        <li>Easy to handle for beginners</li>
+        <li>Better load distribution</li>
+        <li>Reduced risk of falling </li>
+        </ul>
+        <br>
+        <p><h3>Applications</h3></p>
+        <ul>
+        <li>Personal transportation</li>
+        <li>Personal transportation</li>
+        <li>Industrial or campus mobility</li>
+        <li>Industrial or campus mobility</li>
+        </ul>
+    </div>
+    </div>
+
+    <!-- POPUP 3 -->
+    <div id="popup3" class="popupGallery">
+    <span onclick="closePopup(3)">❌</span>
+
+    <div class="slider" id="slider3">
+    <button class="prev">◀</button>
+
+    <img class="active" src="Screenshot 2025-12-29 000352.png">
+    <img src="Screenshot 2025-12-29 000418.png">
+    <img src="Screenshot 2025-12-29 000502.png">
+    <img src="screenshot 2025-12-29 000648.png">
+    <img src="Screenshot 2025-12-29 000719.png">
+    <img src="Screenshot 2025-12-29 000746.png">
+    <img src="Screenshot 2025-12-29 000828.png">
+    <img src="Screenshot 2025-12-29 000900.png">
+
+    <button class="next">▶</button>
+    </div>
+
+    <div class="popup-content">
+    <h2>Multi-Cylinder Engine Assembly Design Using SolidWorks(Pratice design project - 1)</h2><br>
+        <p><h3>Overview</h3></p>
+        <p>Designed a complete 4-cylinder engine mechanism including crankshaft, pistons, and connecting rods using SolidWorks, focusing on assembly motion and mechanical synchronization.</p>
+        <br>
+    </div>
+    </div>
+
+    <!-- POPUP 4 -->
+    <div id="popup4" class="popupGallery">
+    <span onclick="closePopup(4)">❌</span>
+
+    <div class="slider" id="slider4">
+    <button class="prev">◀</button>
+
+    <img class="active" src="Screenshot 2025-12-24 235734.png">
+    <img src="Screenshot 2025-12-24 235657.png">
+    <img src="Screenshot 2025-12-24 235810.png">
+    <img src="Screenshot 2025-12-24 235824.png">
+    <button class="next">▶</button>
+    </div>
+    <div class="popup-content">
+    <h2>Electric Bike Frame Design with Suspension System – SolidWorks(Pratice design project - 2)</h2><br>
+        <p><h3>Overview</h3></p>
+        <p>Designed a complete two-wheeler frame with suspension system, focusing on structural design, component integration, and mechanical stability using SolidWorks.</p>
+        <br>
+    </div>
+    </div>
+
+
+    <!-- POPUP 5 -->
+    <div id="popup5" class="popupGallery">
+    <span onclick="closePopup(5)">❌</span>
+
+    <div class="slider" id="slider5">
+    <button class="prev">◀</button>
+
+    <img class="active" src="Screenshot 2025-12-21 232832.png">
+    <img src="Screenshot 2025-12-21 232935.png">
+    <img src="Screenshot 2025-12-21 233019.png">
+    <button class="next">▶</button>
+    </div>
+    <div class="popup-content">
+    <h2>Quadcopter Drone Frame Design with Propeller Assembly  – SolidWorks(Pratice design project - 3)</h2><br>
+        <p><h3>Overview</h3></p>
+        <p>Designed a quadcopter drone frame with motor and propeller assembly, focusing on structural balance, weight distribution, and aerodynamic stability using SolidWorks.</p>
+        <br>
+    </div>
+    </div>
+
+
+    <!-- POPUP 6 -->
+    <div id="popup6" class="popupGallery">
+    <span onclick="closePopup(6)">❌</span>
+
+    <div class="slider" id="slider6">
+    <button class="prev">◀</button>
+
+    <img class="active" src="Screenshot 2025-12-07 160333.png">
+    <img src="Screenshot 2025-12-07 160410.png">
+    <img src="Screenshot 2025-12-07 160429.png">
+    <img src="Screenshot 2025-12-07 160503.png">
+    <img src="Screenshot 2025-12-07 160518.png">
+    <img src="Screenshot 2025-12-07 160548.png">
+    <img src="Screenshot 2025-12-07 160608.png">
+    <img src="Screenshot 2025-12-07 160632.png">
+    <button class="next">▶</button>
+    </div>
+    <div class="popup-content">
+    <h2>IC Engine Cylinder & Crank Mechanism Design (SolidWorks)(Pratice design project - 4)</h2><br>
+        <p><h3>Overview</h3></p>
+        <p>Designed and assembled a single-cylinder engine including piston, crankshaft, and cylinder using SolidWorks.</p>
+        <br>
+    </div>
+    </div>
+
+
+    <!-- POPUP 7 -->
+    <div id="popup7" class="popupGallery">
+    <span onclick="closePopup(7)">❌</span>
+
+    <div class="slider" id="slider7">
+    <button class="prev">◀</button>
+
+    <img class="active" src="Screenshot 2026-03-21 153421.png">
+    <img src="Screenshot 2025-12-07 160429.png">
+    <img src="Screenshot 2026-03-21 162514.png">
+    <img src="Screenshot 2026-03-21 162536.png">
+    <img src="Screenshot 2026-03-21 162559.png">
+    <img src="Screenshot 2026-03-21 162637.png">
+    <img src="Screenshot 2026-03-21 162657.png">
+    <img src="Screenshot 2026-03-21 162746.png">
+    <button class="next">▶</button>
+    </div>
+    <div class="popup-content">
+    <h2>Three-Wheel Bike with Rear Lifting Mechanism – Design & Assembly(Pratice design project - 5)</h2><br>
+        <p><h3>Overview</h3></p>
+        <p>Designed a three-wheel bike integrated with a rear lifting mechanism, focusing on stability, linkage motion, and structural support.</p>
+        <br>
+    </div>
+    </div>
+
+
+    <!-- POPUP 8 -->
+    <div id="popup8" class="popupGallery">
+    <span onclick="closePopup(8)">❌</span>
+
+    <div class="slider" id="slider8">
+    <button class="prev">◀</button>
+
+    <img class="active" src="Screenshot 2026-03-21 153706.png">
+    <img src="Screenshot 2026-03-21 163344.png">
+    <img src="Screenshot 2026-03-21 163330.png">
+    <img src="Screenshot 2026-03-21 163320.png">
+    <button class="next">▶</button>
+    </div>
+    <div class="popup-content">
+    <h2>Mechanical Lifting Mechanism Design with Linkage System – SolidWorks(Pratice design project - 6)</h2><br>
+        <p><h3>Overview</h3></p>
+        <p>Designed a mechanical lifting system using linkage mechanism, focusing on motion transfer, structural stability, and load handling.</p>
+        <br>
+    </div>
+    </div>
+
+
+    <!-- POPUP 9 -->
+    <div id="popup9" class="popupGallery">
+    <span onclick="closePopup(9)">❌</span>
+
+    <div class="slider" id="slider9">
+    <button class="prev">◀</button>
+
+    <img class="active" src="Screenshot 2026-03-21 153926.png">
+    <img src="Screenshot 2026-03-21 165351.png">
+    <img src="Screenshot 2026-03-21 165342.png">
+    <button class="next">▶</button>
+    </div>
+    <div class="popup-content">
+    <h2>Mechanical Human Model with Linkage Joint System (Pratice design project - 7)</h2><br>
+        <p><h3>Overview</h3></p>
+        <p>Designed a humanoid linkage mechanism to simulate joint motion, focusing on kinematics, movement coordination, and mechanical joints.</p>
+        <br>
+    </div>
+    </div>
+    
+
+    <!-- POPUP 10 -->
+    <div id="popup10" class="popupGallery">
+    <span onclick="closePopup(10)">❌</span>
+
+    <div class="slider" id="slider10">
+    <button class="prev">◀</button>
+
+    <img class="active" src="Screenshot 2025-09-01 223652.png">
+    <img src="Screenshot 2025-11-26 223045.png">
+    <img src="Screenshot 2026-03-21 170712.png">
+    <img src="Screenshot 2026-03-21 170923.png">
+    <img src="Screenshot 2026-03-21 170712.png">
+    <button class="next">▶</button>
+    </div>
+    <div class="popup-content">
+    <h2>Tap on "View Project" to view detailed images and complete project description.(Pratice design project - 8)</h2><br>
+    </div>
+    </div>
+    
+    
+
+    </div>
+
+
+    <!-- ----------Contact--------- -->
+    <section id="contact">
+        <h2 class="section-title">Let's Contact</h2>
+        <p class="section-subtext">
+            I'm always open to discussing new projects, collaborations, or 
+            opportunities in the mechanical engineering field.  
+            Feel free to contact me using the form or directly.
+        </p>
+
+        <div class="contact-container">
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="phone" placeholder="Your Phone Number (Optional)">
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+                    <button type="button" class="send-btn">Send Message 🚀</button>
+                </form>
+            </div>
+
+            <!-- Direct Contact Info -->
+            <div class="contact-info">
+                <h3>Direct Contact</h3>
+
+                <p><i class="fa-solid fa-envelope"></i> 
+                    <a href="mailto:narasimhagosu1946@gmail.com">narasimhagosu1946@gmail.com </a></p>
+                <p><i class="fa-solid fa-phone"></i>
+                    <a href="tel:+919398143551"></a> +91 9398143551</p>
+                <p><i class="fa-solid fa-location-dot"></i> Hyderabad, India</p>
+
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/laxminarasimhagosu/"><i class="fa-brands fa-linkedin"></i></a>
+                    <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
+                    <a href="https://github.com/Narasimha9398"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+// MAIN SLIDER
+const slides = document.querySelector(".slides");
+let slideIndex = 0;
+const total = document.querySelectorAll(".slide").length;
+
+document.querySelector(".slide-btn.next").onclick = () => {
+    slideIndex = (slideIndex + 1) % total;
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+};
+
+document.querySelector(".slide-btn.prev").onclick = () => {
+    slideIndex = (slideIndex - 1 + total) % total;
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+};
+
+// POPUP
+function openPopup(id){
+    document.getElementById("popup"+id).style.display = "block";
+}
+
+function closePopup(id){
+    document.getElementById("popup"+id).style.display = "none";
+}
+
+// FUNCTION FOR EACH POPUP SLIDER
+function setupSlider(sliderId){
+    const slider = document.getElementById(sliderId);
+    if(!slider) return;
+
+    const images = slider.querySelectorAll("img");
+    const next = slider.querySelector(".next");
+    const prev = slider.querySelector(".prev");
+
+    let index = 0;
+
+    function show(i){
+        images.forEach(img => img.classList.remove("active"));
+        images[i].classList.add("active");
+    }
+
+    next.onclick = () => {
+        index = (index + 1) % images.length;
+        show(index);
+    };
+
+    prev.onclick = () => {
+        index = (index - 1 + images.length) % images.length;
+        show(index);
+    };
+}
+
+// APPLY SLIDER TO POPUPS
+setupSlider("slider1");
+setupSlider("slider2");
+setupSlider("slider3");
+setupSlider("slider4");
+setupSlider("slider5");
+setupSlider("slider6");
+setupSlider("slider7");
+setupSlider("slider8");
+setupSlider("slider9");
+setupSlider("slider10");
+</script>
+</body>
+</html>
